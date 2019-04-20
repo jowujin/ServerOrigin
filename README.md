@@ -74,7 +74,7 @@
 }
 ```
 
-##`/notice/addNotice`
+## `/notice/addNotice`
 ### POST 
 **Request**
 ```json
