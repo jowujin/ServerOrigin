@@ -48,7 +48,7 @@ module.exports = (router, Notice, Users, randomstring, multer) => {
         let result = await Notice.findOne({ token: req.body.token })
         if (!result) return res.status(404).json({ message: 'Notice Not Found!' })
         else return res.status(200).json({ notice: result })
-    }).post('/loadNoticeList', async (req, res) => {
+    }).get('/loadNoticeList', async (req, res) => {
         let result = await Notice.find()
         res.status(200).json({ list: result })
     }).post('/likePush', async (req, res) => {
@@ -68,7 +68,7 @@ module.exports = (router, Notice, Users, randomstring, multer) => {
             $set: { like: notice.like - 1 }
         })
         if (!result) res.status(404).json({ message: 'ERR!' })
-        result = await Notice.update({ token: req.body.noticeToken }, {
+        result = Notice.update({ token: req.body.noticeToken }, {
             $pop: { likedUser: { token: req.body.userToken } }
         })
         return res.status(200).json({ message: 'success!' })

@@ -20,11 +20,7 @@ module.exports = (router, Users, randomString) => {
         if (!result) return res.status(402).json({ message: "user is not Found" })
         return res.status(200).json(result)
     }).get('/auto/:token', async (req, res) => {
-        console.log(req.params.token)
-        console.log(11)
         try {
-
-
             let result = await Users.findOne({ token: req.params.token })
             console.log(1234)
             if (!result) return res.status(404).json({ message: 'Users Not Found' })
