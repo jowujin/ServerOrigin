@@ -193,4 +193,123 @@ NULL
 }
 ```
 
+## `/closet/addNewDress`
+## POST
+**Request**
+```json
+{
+    "content" : "옷 이름",
+    "token" : "huMeILRTBPh8orb1OV6eATFFh",
+    "img" : "이미지",
+}
+```
+
+**Response**
+> 성공했을 경우
+```json
+{
+    "message": "success!"
+}
+```
+
+> 실패했을 경우
+```json
+{
+    "message": "ERR!"
+}
+```
+
+## `/closet/loadCloset`
+## POST
+**Request**
+```json
+{
+	"token" : "huMeILRTBPh8orb1OV6eATFFh"
+}
+```
+
+**Response**
+> 성공했을 경우
+```json
+{
+    "closet": [
+        {
+            "_id": "5cbb4e32fa0e3e36700fd541",
+            "title": "제목",
+            "img": "localhost:3001/public/notice/cHBoMCKQvQBWcXCLnbFBRm.PNG",
+            "token": "xC83JJr7h0PsL23VxHjkiXPDp"
+        },
+        {
+            "_id": "5cbb4e4dfa0e3e36700fd542",
+            "title": "제목",
+            "img": "localhost:3001/public/notice/AneiXm1O4fTR7h0IbWGZy1.PNG",
+            "token": "Hj938Ufmo8UYKoNATe2klESfM"
+        },
+        {
+            "_id": "5cbb5c6fb912b25d9c06095f",
+            "title": "글 제",
+            "img": "localhost:3001/public/notice/xPOnoivbZCkgi9XRjATiqP.PNG",
+            "token": "drFRrkjFE06cixO6x77qynW3c"
+        }
+    ]
+}
+```
+ > 실패했을 경우
+ ```json
+ {
+    "message": "Users Not Found!"
+}
+```
+
+## `/closet/removeCloset`
+## POST
+**Request**
+```json
+{
+	"token" : "huMeILRTBPh8orb1OV6eATFFh"
+}
+```
+
+**Response**
+> 성공했을 경우
+```json
+{
+    "message": "success!"
+}
+```
+
+> 실패했을 경우
+```json
+{
+    "message": "ERR!"
+}
+```
+
+## `/comment/addComment`
+## POST
+**Request**
+```json
+{
+	"content" : "aasdf\n%%%\nasdf\n%%%\nasdf",
+	"name" : "이름",
+	"token" : "huMeILRTBPh8orb1OV6eATFFh"
+}
+```
+**Response**
+> 성공했을 경우
+```json
+{
+    "message": "success!"
+}
+```
+
+> 실패했을 경우
+```json
+{
+    "message": "ERR!"
+}
+```
+
+
+
 
