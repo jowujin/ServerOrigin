@@ -21,11 +21,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 import { Users, Notice } from './databases/index';
 
 let auth = require('./routes/auth')(router, Users, randomString);
-let notice = require('./routes/notice')(router, Notice, randomString, multer)
+let notice = require('./routes/notice')(router, Notice, randomString, multer);
 let closet = require('./routes/closet')(router, Users, randomString, multer);
+let comment = require('./routes/comment')(router, Notice, randomString, multer);
 
 app.use('/auth', auth);
 app.use('/notice', notice);
+app.use('/closet', closet)
+app.use('/comment', comment)
 
 const PORT = 3001
 

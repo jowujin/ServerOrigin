@@ -18,7 +18,7 @@ module.exports = (router, Notice, randomstring, multer) => {
         let new_notice = {
             title: req.body.title,
             content: req.body.content,
-            // date: req.body.date,
+            Date: Date.now(),
             token: randomstring.generate(15),
         }
         var position = new Array();
@@ -27,7 +27,6 @@ module.exports = (router, Notice, randomstring, multer) => {
             position.push(pos);
             pos = new_notice.content.indexOf('%%%', pos + 1);
         }
-        let a = new_notice.content.replace("%%%", '000')
         for (var i = 0; i < position[i] != null; i++) {
             if (position[i] === undefined) break;
             new_notice.content = new_notice.content.replace("%%%", ('localhost:3000/public/notice/' + req.files[i].filename))
