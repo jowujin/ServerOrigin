@@ -73,3 +73,14 @@
     "message": "user is not Found"
 }
 ```
+
+##`/notice/addNotice`
+### POST 
+***Request**
+```json
+{
+    "title" : "제목",
+    "content" : "aaaa\n%%%%\nasdfasdfsadf\n%%%\nasdfsdfa",
+}
+```
+`%%%는 사진이 들어갈 부분, %%%개수만큼 사진을 넣는다`
