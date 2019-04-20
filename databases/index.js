@@ -35,7 +35,7 @@ const noticeSchema = new mongoose.Schema({
     title: String, // 글 제목
     content: String,
     Date: Date,
-    like: Number,
+    like: { type: Number, default: 0 },
     likedUser: [{
         token: String
     }],

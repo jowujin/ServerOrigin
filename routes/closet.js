@@ -40,6 +40,10 @@ module.exports = (router, Users, randomString, multer) => {
             })
             if (!result) return res.status(500).json({ message: "ERR!" })
             else return res.status(200).json({ message: "success!" })
+        }).post('/loadBasket', async (req, res) => {
+            let user = await Users.findOne({ token: req.body.token })
+            if (!user) return res.status(404).json({ message: "Users Not Found!" })
+            return res.status(200).json({ Basket: user.Basket })
         })
     return router;
 }
