@@ -21,10 +21,7 @@ const userSchema = new mongoose.Schema({
     }],
     Closet: [{
         title: String,
-        phone: String,
-        price: Number,
         img: String,
-        tag: String,
         token: String,
     }],
     notice: [{ // 게시판
@@ -37,6 +34,10 @@ const noticeSchema = new mongoose.Schema({
     title: String, // 글 제목
     content: String,
     Date: Date,
+    like: Number,
+    likedUser: [{
+        token: String
+    }],
     Comment: [{
         content: String,
         writer: String,
