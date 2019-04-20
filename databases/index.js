@@ -17,7 +17,8 @@ const userSchema = new mongoose.Schema({
         token: String,
         img: String,
         company: String,
-        token: String,
+        companyPhone: String,
+        price: Number,
     }],
     Closet: [{
         title: String,
@@ -47,8 +48,20 @@ const noticeSchema = new mongoose.Schema({
     token: String,
 })
 
+const dressSchema = new mongoose.Schema({
+    title: String,
+    token: String,
+    price: Number,
+    company: String,
+    companyPhone: String,
+    img: String,
+    Date: Date,
+    age: Number, // 연령
+    year: Number // 연도
+})
 
 let Users = mongoose.model('users', userSchema);
 let Notice = mongoose.model('notice', noticeSchema);
+let Dress = mongoose.model('dress', dressSchema);
 
-export { Users, Notice }
+export { Users, Notice, Dress }
