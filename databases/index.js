@@ -16,10 +16,13 @@ const userSchema = new mongoose.Schema({
         title: String,
         token: String,
         img: String,
-        company: String
+        company: String,
+        token: String,
     }],
     Closet: [{
         title: String,
+        phone: String,
+        price: Number,
         img: String,
         tag: String,
         token: String,
@@ -32,19 +35,19 @@ const userSchema = new mongoose.Schema({
 
 const noticeSchema = new mongoose.Schema({
     title: String, // 글 제목
-    img: String,
     content: String,
     Date: Date,
-    like: Number,
     Comment: [{
         content: String,
         writer: String,
-        Date: Date
+        Date: Date,
     }],
     Comment_cont: Number,
     token: String,
 })
 
-let Users = mongoose.model('users', userSchema);
 
-export { Users }
+let Users = mongoose.model('users', userSchema);
+let Notice = mongoose.model('notice', noticeSchema);
+
+export { Users, Notice }

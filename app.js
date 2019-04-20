@@ -24,11 +24,13 @@ app.use(session({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-import { Users } from './databases/index';
+import { Users, Notice } from './databases/index';
 
 let auth = require('./routes/auth')(router, Users, randomString);
+let notice = require('./routes/notice')(router, Notice, randomString, multer)
 
 app.use('/auth', auth);
+app.use('/notice', notice);
 
 const PORT = 3001
 

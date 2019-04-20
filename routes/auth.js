@@ -17,7 +17,7 @@ module.exports = (router, Users, randomString) => {
         res.status(200).json(new_user)
     }).post('/signin', async (req, res) => {
         let result = await Users.findOne({ id: req.body.id, password: req.body.password })
-        if (!result) return status(402).json({ message: "user is not Found" })
+        if (!result) return res.status(402).json({ message: "user is not Found" })
         return res.status(200).json(result)
     })
     return router;
