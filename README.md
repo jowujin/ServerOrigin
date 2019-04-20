@@ -74,6 +74,51 @@
 }
 ```
 
+## `/auth/auto/:token`
+`token은 유저 토큰`
+## GET
+**Request**
+```json
+NULL
+```
+**Response**
+```json
+{
+    "user": {
+        "_id": "5cbb1541cf6e07293c5382e2",
+        "id": "test1",
+        "password": "1234",
+        "name": "aaa",
+        "address": "주소",
+        "birthday": 20011212,
+        "token": "huMeILRTBPh8orb1OV6eATFFh",
+        "Basket": [],
+        "notice": [],
+        "__v": 0,
+        "Closet": [
+            {
+                "_id": "5cbb4e32fa0e3e36700fd541",
+                "title": "제목",
+                "img": "localhost:3001/public/notice/cHBoMCKQvQBWcXCLnbFBRm.PNG",
+                "token": "xC83JJr7h0PsL23VxHjkiXPDp"
+            },
+            {
+                "_id": "5cbb4e4dfa0e3e36700fd542",
+                "title": "제목",
+                "img": "localhost:3001/public/notice/AneiXm1O4fTR7h0IbWGZy1.PNG",
+                "token": "Hj938Ufmo8UYKoNATe2klESfM"
+            },
+            {
+                "_id": "5cbb5c6fb912b25d9c06095f",
+                "title": "글 제",
+                "img": "localhost:3001/public/notice/xPOnoivbZCkgi9XRjATiqP.PNG",
+                "token": "drFRrkjFE06cixO6x77qynW3c"
+            }
+        ]
+    }
+}
+```
+
 ## `/notice/addNotice`
 ### POST 
 **Request**
@@ -155,7 +200,7 @@
 ```
 
 ## `/notice/loadNoticeList`
-## POST
+## GET
 **Request**
 ```json
 NULL
